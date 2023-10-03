@@ -7,5 +7,6 @@ In this project we will design and prototype a working web application using a C
 <br>
 Rosa Silva
 <br>
+Henry Yu
 
 
