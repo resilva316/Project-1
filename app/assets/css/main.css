@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+}
+
+h1 {
+    font-family: Apple Chancery;
+    text-align: center;
+}
+
+h2 {
+    font-family: Apple Chancery;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #FEFAE0;
+}
+
+.leftdiv {
+    background-color: #CCD5AE;
+    border-radius: 10px;
+}
+
+.leftcheckbox {
+    background-color: #E9EDC9;
+}
+
+.journaldiv {
+    background-color: #FAEDCD;
+    border-radius: 10px;
+}
+
+.jounalcontent {
+    background-color: #FAEDCD;
+}
