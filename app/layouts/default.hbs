@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/nav.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/signups.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/about.css">
     <!--Source for tailwindcss but doesn't work-->
     <!--<link rel="stylesheet" type="text/css" href="/assets/css/style.css">-->
 </head>
@@ -15,13 +16,13 @@
   <div class="navcontainer">
     <div class="nav">
       <div class="pages">
-        <a class="navbutton" href="/pages/index">Homepage</a>
-        <a class="navbutton" href="/pages/aboutme">About Us</a>
+        <a class="navbutton" href="../index">Homepage</a>
+        <a class="navbutton" href="../aboutme">About Us</a>
       </div>
       {{#if currentUser}}
       <div class="user">
         <div>{{currentUser.details.username}}</div>
-        <a class="navbutton" href="/user/index">Logout</a>
+        <a class="navbutton" href="/user/login">Logout</a>
       </div>
       {{else}}
         <div class="user">
