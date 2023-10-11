@@ -16,7 +16,10 @@ a {
 }
 
 body {
-    background-color: #FEFAE0;
+    background-image: url(../images/backgroundbetter.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    
 }
 
 .leftdiv {
@@ -31,8 +34,23 @@ body {
 .journaldiv {
     background-color: #FAEDCD;
     border-radius: 10px;
+    margin-left: 60px;
 }
 
 .jounalcontent {
     background-color: #FAEDCD;
+}
+
+.journalcontainers {
+    display: grid;
+}
+
+.journalbox {
+    background-color: white; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.placeholder {
+    width: 60px;
 }
