@@ -55,35 +55,34 @@
                     <p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
                 </div>
                 <div class="date_text" object key:date="@search" edit:date>
-                    <p class="date" target:date="@innerText">{{default entry.date ""}}</p>
+                    <p class="date" target:date="@innerText">{{default entry.date "10/11/23"}}</p>
                 </div>
-                <div class="entry_text" object key:entry-text="@search" edit:entry-text>
-                    <p class="entryText" target:entry-text="@innerText">{{default entry.entry-text "Test Entry"}}</p>
+                <div class="entry_text" object key:text="@search" edit:text>
+                    <p class="text" target:text="@innerText">{{default entry.text "Test Entry"}}</p>
                 </div>
             </div>
             {{/for}}
-            <button class="button button--add-entry" new:entry>Add Entry</button>
 
-            <!--<p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
-            <p class="date" target:date="@innerText">{{default entry.date ""}}</p>
-            <p class="text" target:text="@innerText">{{default entry.text "text"}}</p>
--->
-            <!--<div class="entry" object>
-                <div class="title_text" object key:title="@search" edit:title>
-                    <p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
+
+
+            <div id="popup-window">
+                <div class="entry" object>
+                    <div class="title_text" object key:title="@search" edit:title>
+                        <p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
+                    </div>
+                    <div class="date_text" object key:date="@search" edit:date>
+                        <p class="date" target:date="@innerText">{{default entry.date "10/2/23"}}</p>
+                    </div>
+                    <div class="entry_text" object key:text="@search" edit:text>
+                        <p class="text" target:text="@innerText">{{default entry.text "Test Entry"}}</p>
+                    </div>
                 </div>
-                <div class="date_text" object key:date="@search" edit:date>
-                    <p class="date" target:date="@innerText">{{default entry.date "10/2/27"}}</p>
-                </div>
-                <div class="entry_text" object key:text="@search" edit:text>
-                    <p class="text" target:text="@innerText">{{default entry.text "text"}}</p>
-                </div>
+                <button id="close-button">Close</button>
             </div>
-            
-            <a href="#" id="popup-link"></a>
+            <a href="#" id="popup-link"><button class="button button--add-entry" new:entry>Add Entry</button></a>
 
-        </div>-->
         </div>
     </div>
+</div>
 
-    <h3>Trying out Tailwind lol didn't work</h3>
+<h3>Trying out Tailwind lol didn't work</h3>
