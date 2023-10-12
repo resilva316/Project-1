@@ -1,1 +1,73 @@
-{}
+{
+  "goals": [
+    {
+      "text": "Brush Hair"
+    },
+    {
+      "text": "Make Bed"
+    },
+    {
+      "text": "New Goal"
+    }
+  ],
+  "Habbits": [
+    {
+      "text": "Make Bed"
+    },
+    {
+      "text": "Attend Classes"
+    },
+    {
+      "text": "New Habit"
+    },
+    {
+      "text": "New Habit"
+    },
+    {
+      "text": "New Habit"
+    }
+  ],
+  "entries": [
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "date": "10/2/23",
+      "text": "Test Entry",
+      "title": "New Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
+    }
+  ],
+  "id": "GJgZxEGAFgBwOx"
+}

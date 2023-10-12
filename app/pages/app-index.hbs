@@ -9,61 +9,72 @@
     <!--THis div is for left side of app-->
     <div>
         <div class="leftdiv">
-            <h2>Goals</h2>
-            <div class="leftcheckbox"> 
-                <input type="checkbox" id="goal1" name="goal1" value="goal1">
-                <label for="goal1">Insert later</label>
-                <br>
-                <input type="checkbox" id="goal2" name="goal2" value="goal2">
-                <label for="goal2">Insert later</label>
-                <br>
-                <input type="checkbox" id="goal3" name="goal3" value="goal3">
-                <label for="goal3">Insert later</label>
-                <br>
+            <div object>
+                <h2>Goals</h2>
+                <div class="leftcheckbox"> 
+                    <ul array key="goals" sortable>
+                        {{#for goal in goals}}
+                            <li object key:text="@innerText" edit:text>{{default goal.text "New Goal"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:goal>Add Goal</button></div>
             </div>
         </div>
         <div class="leftdiv">
-            <h2>Habits</h2>
-            <div class="leftcheckbox">
-                <input type="checkbox" id="habit1" name="habit1" value="habit1">
-                <label for="habit1">Insert later</label>
-                <br>
-                <input type="checkbox" id="habit2" name="habit2" value="habit2">
-                <label for="habit2">Insert later</label>
-                <br>
-                <input type="checkbox" id="goal3" name="habit3" value="habit3">
-                <label for="habit3">Insert later</label>
-                <br>
+            <div object>
+                <h2>Habbits</h2>
+                <div class="leftcheckbox"> 
+                    <ul array key="Habbits" sortable>
+                        {{#for habbit in Habbits}}
+                            <li object key:text="@innerText" edit:text>{{default habbit.text "New Habit"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:habbit>Add Habbit</button></div>
             </div>
         </div>
         <div class="leftdiv">
             <h2>Affirmations</h2>
             <div class="leftcheckbox">
                 <p>random generated affirmation will go here</p>
-                <input type="button" value="Generate">
             </div>
+             <div class="dashdiv"><input class="dashbutton" type="button" value="Generate"></div>
         </div>
     </div>
     <!--This div is for the journal entires-->
     <div class="journaldiv">
         <h2>Journal Entries</h2>
-        <div class="journalcontainers">
-            <div>
-                <h2>New Entry</h2>
-                <h2>Delete Old Entry</h2>
+        <div class="journalcontainers" array key="entries" sortable="entries">
+             {{#for entry in entries}}
+                <div class="entry" object>
+                <div class="title_text" object key:title="@search" edit:title>
+                    <p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
+                </div>
+                <div class="date_text" object key:date="@search" edit:date>
+                    <p class="date" target:date="@innerText">{{default entry.date "10/11/23"}}</p>
+                </div>
+                <div class="entry_text" object key:text="@search" edit:text>
+                    <p class="text" target:text="@innerText">{{default entry.text "Test Entry"}}</p>
+                </div>
             </div>
-            <div>
-                <h2>New Entry</h2>
-                <h2>Delete Old Entry</h2>
+            {{/for}}
+
+            <div id="popup-window">
+                <div class="entry" object>
+                    <div class="title_text" object key:title="@search" edit:title>
+                        <p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
+                    </div>
+                    <div class="date_text" object key:date="@search" edit:date>
+                        <p class="date" target:date="@innerText">{{default entry.date "10/2/23"}}</p>
+                    </div>
+                    <div class="entry_text" object key:text="@search" edit:text>
+                        <p class="text" target:text="@innerText">{{default entry.text "Test Entry"}}</p>
+                    </div>
+                </div>
+                <button id="close-button">Close</button>
             </div>
-            <div>
-                <h2>New Entry</h2>
-                <h2>Delete Old Entry</h2>
-            </div>
-            <div>
-                <h2>New Entry</h2>
-                <h2>Delete Old Entry</h2>
-            </div>
+            <a href="#" id="popup-link"><button class="button button--add-entry" new:entry>Add Entry</button></a>
         </div>
     </div>
 </div>
