@@ -93,7 +93,13 @@
             <a href="#" id="popup-link"><button class="button button--add-entry" new:entry>Add Entry</button></a>
         </div>
     </div>
-    <!--Currently calendar assumes same month and year, -->
+        <!--Currently calendar assumes same month and year, -->
+        <!--
+        *******************************************************
+        IMPORTANT READ
+        NEED TO MOVE CALENDAR TO NEW PAGE
+        IT BREAKS CREATING AN ENTRY!!!!
+        ************************************-->
 <div class = "calendar">
         <h1>{{currentUser.details.username}}'s Calendar</h1>
         <div class = "calendarHead">
@@ -102,73 +108,69 @@
         <div class="calendarBody">
         </div>
     <script>
+function getCurrentMonth() {
+    var currentDate = new Date();
+    var currentMonth = currentDate.toLocaleString("default", { month: "long" });
+    var currentYear = currentDate.getFullYear();
+    return currentMonth + " " + currentYear;
+    }
 
-        function getCurrentMonth() {
-            var currentDate = new Date();
-            var currentMonth = currentDate.toLocaleString("default", { month: "long" });
-            var currentYear = currentDate.getFullYear();
-            return currentMonth + " " + currentYear;
-            }
+function getTotalDays(){
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = currentDate.getMonth() + 1;
+    return new Date(year,month,0).getDate();
+}
 
-        function getTotalDays(){
-            var currentDate = new Date();
-            var year = currentDate.getFullYear();
-            var month = currentDate.getMonth() + 1;
-            return new Date(year,month,0).getDate();
-        }
+function generateCalendar() {
+    var currentDate = new Date();
+    var curMonth = document.querySelector(".currentMonth");
+    curMonth.textContent = getCurrentMonth();
 
-        function generateCalendar() {
-            var currentDate = new Date();
-            var curMonth = document.querySelector(".currentMonth");
-            curMonth.textContent = getCurrentMonth();
+    var calendarBody = document.querySelector(".calendarBody");
+    
+    var totalDays = getTotalDays();
 
-            var calendarBody = document.querySelector(".calendarBody");
+    for (let day = 1; day <= totalDays; day++){
+        var cell=document.createElement("div");
+        cell.classList.add("dayCell");
+        cell.textContent = day;
+        cell.setAttribute("dateDate", `10/${day}/23`);
+
+        {{#for entry in entries}}
+        var entryTitle = document.createElement("p");
+        entryTitle.textContent = "{{entry.title}}";
+
+        {{#for info in entry.infos}}
+        console.log("Entry date: {{info.date}}");
+        console.log (`10/${day}/23`)
+        if (`10/${day}/23` === "{{info.date}}") {
+            console.log("work????");
+            var entryDiv = document.createElement("div");
+            entryDiv.classList.add("entries");
             
-            var totalDays = getTotalDays();
+            entryDiv.appendChild(entryTitle);
 
-            for (let day = 1; day <= totalDays; day++){
-                var cell=document.createElement("div");
-                cell.classList.add("dayCell");
-                cell.textContent = day;
-                cell.setAttribute("dateDate", `10/${day}/23`);
+            var entryDate = document.createElement("p");
+            entryDate.textContent = "{{info.date}}";
+            entryDiv.appendChild(entryDate);
 
-                {{#for entry in entries}}
-                var entryTitle = document.createElement("p");
-                entryTitle.textContent = "{{entry.title}}";
+            var entryText = document.createElement("p");
+            entryText.textContent = "{{info.text}}";
+            entryDiv.appendChild(entryText);
 
-                {{#for info in entry.infos}}
-                console.log("Entry date: {{info.date}}");
-                console.log (`10/${day}/23`)
-                if (`10/${day}/23` === "{{info.date}}") {
-                    console.log("work????");
-                    var entryDiv = document.createElement("div");
-                    entryDiv.classList.add("entries");
+            cell.appendChild(entryDiv);
+        }
+        {{/for}}
+        {{/for}}
 
-                    
-                    
-                    entryDiv.appendChild(entryTitle);
-
-                    var entryDate = document.createElement("p");
-                    entryDate.textContent = "{{info.date}}";
-                    entryDiv.appendChild(entryDate);
-
-                    var entryText = document.createElement("p");
-                    entryText.textContent = "{{info.text}}";
-                    entryDiv.appendChild(entryText);
-
-                    cell.appendChild(entryDiv);
-                }
-                {{/for}}
-                {{/for}}
-
-                
         
-                calendarBody.appendChild(cell);
-                
-            }
-            }
 
-        generateCalendar();
-    </script>
+        calendarBody.appendChild(cell);
+        
+    }
+    }
+
+generateCalendar();</script>
 
 </div>
