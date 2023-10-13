@@ -1,163 +1,96 @@
+
 <!--This div will be nav bar in the future-->
 <div>
 
 </div>
 <h1>{{currentUser.details.username}} Dashboard</h1>
 <!--Flexbox div to contain layout-->
-<div class="container">
+<div class = "container">
     <!--THis div is for left side of app-->
     <div>
         <div class="leftdiv">
-            <h2>Goals</h2>
-            <div class="leftcheckbox">
-                <input type="checkbox" id="goal1" name="goal1" value="goal1">
-                <label for="goal1">Insert later</label>
-                <br>
-                <input type="checkbox" id="goal2" name="goal2" value="goal2">
-                <label for="goal2">Insert later</label>
-                <br>
-                <input type="checkbox" id="goal3" name="goal3" value="goal3">
-                <label for="goal3">Insert later</label>
-                <br>
+            <div object>
+                <h2>Goals</h2>
+                <div class="leftcheckbox"> 
+                    <ul array key="goals" sortable>
+                        {{#for goal in goals}}
+                            <li object key:text="@innerText" edit:text>{{default goal.text "New Goal"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:goal>Add Goal</button></div>
             </div>
         </div>
         <div class="leftdiv">
-            <h2>Habits</h2>
-            <div class="leftcheckbox">
-                <input type="checkbox" id="habit1" name="habit1" value="habit1">
-                <label for="habit1">Insert later</label>
-                <br>
-                <input type="checkbox" id="habit2" name="habit2" value="habit2">
-                <label for="habit2">Insert later</label>
-                <br>
-                <input type="checkbox" id="goal3" name="habit3" value="habit3">
-                <label for="habit3">Insert later</label>
-                <br>
+            <div object>
+                <h2>Habbits</h2>
+                <div class="leftcheckbox"> 
+                    <ul array key="Habbits" sortable>
+                        {{#for habbit in Habbits}}
+                            <li object key:text="@innerText" edit:text>{{default habbit.text "New Habit"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:habbit>Add Habbit</button></div>
             </div>
         </div>
         <div class="leftdiv">
             <h2>Affirmations</h2>
             <div class="leftcheckbox">
                 <p>random generated affirmation will go here</p>
-                <input type="button" value="Generate">
             </div>
+             <div class="dashdiv"><input class="dashbutton" type="button" value="Generate"></div>
         </div>
     </div>
     <!--This div is for the journal entires-->
-    <div class="journaldiv">
+        <div class="journaldiv">
         <h2>Journal Entries</h2>
-
-        <div class="journal" array key="entries" sortable="entries">
-
-            {{#for entry in entries}}
-            <div class="entry" object>
-                <div class="title_text" object key:title="@search" edit:title>
-                    <p class="title" target:title="@innerText">{{default entry.title "New Title Entry"}}</p>
+        <div class="journalcontainers" array key="entries" sortable="entries">
+             {{#for entry in entries}}
+                <div class="entry" object key:title="@search" default:title="new title??" >
+                    
+                <div class="title_text">
+                    <p class="title" target:title="@innerText" edit:title>{{default entry.title "New Title n"}}</p>
                 </div>
-                <div class="date_text" object key:date="@search" edit:date>
-                    <p class="date" target:date="@innerText">{{default entry.date "10/1/23"}}</p>
-                </div>
-                <div class="entry_text" object key:entry-text="@search" edit:entry-text>
-                    <p class="entryText" target:entry-text="@innerText">{{default entry.entry-text "Text Entry"}}</p>
+                <button new:info>New info</button>
+                <div class = "infoArray" array key="infos" sortable = "infos">
+                    {{#for info in entry.infos}}
+                        <div class = "info" object key:info="@search">
+                            <div class = "date" object key:date="@search" edit:date>
+                                <p class = "date" target:date="@innerText">{{default info.date "10/1/23"}}</p>
+                            </div>
+                            <div class="entry_text" object key:text="@search" edit:text>
+                                <p class="text" target:text="@innerText">{{default info.text "Test text n"}}</p>
+                            </div>
+                        </div>
+                      {{/for}}
                 </div>
             </div>
             {{/for}}
-            <button class="button button--add-entry" new:entry>Add Entry</button>
 
-            <!--<p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
-            <p class="date" target:date="@innerText">{{default entry.date ""}}</p>
-            <p class="text" target:text="@innerText">{{default entry.text "text"}}</p>
--->
-            <!--<div class="entry" object>
-                <div class="title_text" object key:title="@search" edit:title>
-                    <p class="title" target:title="@innerText">{{default entry.title "New Entry"}}</p>
+            <div id="popup-window">
+                <div class="entry" object key:title="@search" default:title="new title??" >
+                    
+                <div class="title_text">
+                    <p class="title" target:title="@innerText" edit:title>{{default entry.title "New Title"}}</p>
                 </div>
-                <div class="date_text" object key:date="@search" edit:date>
-                    <p class="date" target:date="@innerText">{{default entry.date "10/2/27"}}</p>
-                </div>
-                <div class="entry_text" object key:text="@search" edit:text>
-                    <p class="text" target:text="@innerText">{{default entry.text "text"}}</p>
+                <button new:info>New info</button>
+                <div class = "infoArray" array key="infos" sortable = "infos">
+                    {{#for info in entry.infos}}
+                        <div class = "info" object key:info="@search">
+                            <div class = "date" object key:date="@search" edit:date>
+                                <p class = "date" target:date="@innerText">{{default info.date "10/1/23"}}</p>
+                            </div>
+                            <div class="entry_text" object key:text="@search" edit:text>
+                                <p class="text" target:text="@innerText">{{default info.text "Test text"}}</p>
+                            </div>
+                        </div>
+                      {{/for}}
                 </div>
             </div>
-            
-            <a href="#" id="popup-link"></a>
-
-        </div>-->
+                <button id="close-button">Close</button>
+            </div>
+            <a href="#" id="popup-link"><button class="button button--add-entry" new:entry>Add Entry</button></a>
         </div>
-        </div>
-        
-<!--Couldn't get entries to generate in another file so i figured id just jam calendar in here for now to figure out calendar first-->
-<!--So far only functionality only works for current month and year-->
-    <div class = "calendar">
-        <h1>{{currentUser.details.username}} Calendar</h1>
-        <div class = "calendarHead">
-            <p class = "currentMonth">Current Month</p>
-        </div>
-        <div class="calendarBody">
-        </div>
-    <script>
-
-        function getCurrentMonth() {
-            var currentDate = new Date();
-            var currentMonth = currentDate.toLocaleString("default", { month: "long" });
-            var currentYear = currentDate.getFullYear();
-            return currentMonth + " " + currentYear;
-            }
-
-        function getTotalDays(){
-            var currentDate = new Date();
-            var year = currentDate.getFullYear();
-            var month = currentDate.getMonth() + 1;
-            return new Date(year,month,0).getDate();
-        }
-
-        function generateCalendar() {
-            var currentDate = new Date();
-            var curMonth = document.querySelector(".currentMonth");
-            curMonth.textContent = getCurrentMonth();
-
-            var calendarBody = document.querySelector(".calendarBody");
-            
-            var totalDays = getTotalDays();
-
-            for (let day = 1; day <= totalDays; day++){
-                var cell=document.createElement("div");
-                cell.classList.add("dayCell");
-                cell.textContent = day;
-                cell.setAttribute("dateDate", `10/${day}/23`);
-
-                {{#for entry in entries}}
-                console.log("Entry date: {{entry.date}}");
-                console.log (`10/${day}/23`)
-                if (`10/${day}/23` === "{{entry.date}}") {
-                    console.log("work????");
-                    var entryDiv = document.createElement("div");
-                    entryDiv.classList.add("entries");
-
-                    var entryTitle = document.createElement("p");
-                    entryTitle.textContent = "{{entry.title}}";
-                    entryDiv.appendChild(entryTitle);
-
-                    var entryDate = document.createElement("p");
-                    entryDate.textContent = "{{entry.date}}";
-                    entryDiv.appendChild(entryDate);
-
-                    var entryText = document.createElement("p");
-                    entryText.textContent = "{{entry.entryText}}";
-                    entryDiv.appendChild(entryText);
-
-                    cell.appendChild(entryDiv);
-                }
-                {{/for}}
-
-                
-        
-                calendarBody.appendChild(cell);
-                
-            }
-            }
-
-        generateCalendar();
-    </script>
-
-    <h3>Trying out Tailwind lol didn't work</h3>
+    </div>
+</div>
