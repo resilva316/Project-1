@@ -1,0 +1,71 @@
+{
+  "goals": [
+    {
+      "text": "Goals gg"
+    },
+    {
+      "text": "New Goal"
+    },
+    {
+      "text": "New Goal"
+    }
+  ],
+  "Habbits": [
+    {
+      "text": "Habit gg"
+    },
+    {
+      "text": "New Habit"
+    },
+    {
+      "text": "New Habit"
+    }
+  ],
+  "Reminders": [
+    {
+      "text": "Homework Due"
+    },
+    {
+      "text": "New Reminder"
+    },
+    {
+      "text": "New Reminder"
+    },
+    {
+      "text": "New Reminder"
+    }
+  ],
+  "entries": [
+    {
+      "title": "Day 1",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "Day 2",
+      "date": "10/12/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "Day 3",
+      "date": "10/13/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    }
+  ],
+  "id": "XYuPwZCC1ro5JG"
+}

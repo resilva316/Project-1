@@ -1,9 +1,11 @@
-<h1>Welcome to my app!</h1>
-<ul>
+<div class="imgcontainer">
+  <h1 class="h1text">Welcome to our website!</h1>
+  <img class="img" src="../assets/images/stickynote.png">
   {{#if currentUser}}
-    <h2>Welcome Back {{currentUser.details.username}}</h2>
-    <li><a href="/{{currentUser.details.username}}">Go to your dashboard</a></li>
+    <h2 class="center">Welcome Back {{currentUser.details.username}}</h2>
+    <button class="centerbutton mainbutton"><a href="/{{currentUser.details.username}}">Go to your dashboard</a></button>
   {{else}}
-    <li><a href="/user/signup">Sign up for an account</a></li>
+    <h2 class="center">Create An Account</h2>
+    <button class="mainbutton"><a href="/user/signup">Sign up for an account</a></button>
   {{/if}}
-</ul>
+</div>
