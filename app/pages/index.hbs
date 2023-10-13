@@ -1,0 +1,9 @@
+<h1>Welcome to my app!</h1>
+<ul>
+  {{#if currentUser}}
+    <h2>Welcome Back {{currentUser.details.username}}</h2>
+    <li><a href="/{{currentUser.details.username}}">Go to your dashboard</a></li>
+  {{else}}
+    <li><a href="/user/signup">Sign up for an account</a></li>
+  {{/if}}
+</ul>
