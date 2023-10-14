@@ -1,4 +1,5 @@
 {
     "port": 3000,
-    "sessionSecret": "CzQSyq0BfLrz8FSCOSMXWgvObyztX6"
+    "sessionSecret": "CzQSyq0BfLrz8FSCOSMXWgvObyztX6",
+    "generateUniqueIds": true
 }
