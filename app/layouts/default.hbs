@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/signups.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/about.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/cal.css">
     <!--Source for tailwindcss but doesn't work-->
     <!--<link rel="stylesheet" type="text/css" href="/assets/css/style.css">-->
 </head>
@@ -23,6 +24,7 @@
       {{#if currentUser}}
       <div class="user">
         <div>{{currentUser.details.username}}</div>
+        <a class="navbutton" href="/{{currentUser.details.username}}/calendar">Calendar</a>
         <a class="navbutton" href="/user/login">Logout</a>
       </div>
       {{else}}

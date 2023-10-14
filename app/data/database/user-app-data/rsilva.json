@@ -33,85 +33,101 @@
       "text": "New Habit"
     }
   ],
-  "Reminders": [
-    {
-      "text": "re"
-    },
-    {
-      "text": "New Reminder"
-    }
-  ],
   "entries": [
     {
       "title": "Main Page",
-      "infos": [
-        {
-          "date": "10/4/23",
-          "text": "Test text"
-        },
-        {
-          "date": "Enter Date: (ex:mm/dd/yy)",
-          "text": "Enter text here"
-        }
-      ]
+      "date": "10/23/2023",
+      "text": "This is the main page of the journal entrie"
     },
     {
-      "title": "OMG",
-      "infos": [
-        {
-          "date": "10/8/23",
-          "text": "Trying New things"
-        }
-      ]
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
     },
     {
-      "title": "Will it work",
-      "infos": [
-        {
-          "date": "10/8/23",
-          "text": "Test text"
-        }
-      ]
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
     },
     {
-      "title": "Did it work",
-      "infos": [
-        {
-          "date": "10/15/23",
-          "text": "Test text"
-        }
-      ]
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
     },
     {
-      "title": "Check List",
-      "infos": [
-        {
-          "date": "10/8/23",
-          "text": "I will be writing on here :)"
-        }
-      ]
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
     },
     {
-      "title": "Rosa",
-      "infos": [
-        {
-          "date": "10/25/23",
-          "text": "Hello"
-        }
-      ]
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
     },
     {
-      "title": "Bookworms",
-      "infos": [
-        {
-          "date": "10/08/23",
-          "text": "This is a journal"
-        }
-      ]
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
     },
     {
-      "title": "Enter Title",
-      "infos": []
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/2/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
+    },
+    {
+      "title": "New Entry",
+      "date": "10/11/23",
+      "text": "Test Entry"
     }
   ],
   "id": "GJgZxEGAFgBwOx"

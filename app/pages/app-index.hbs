@@ -51,125 +51,53 @@
     <div class="journaldiv">
         <h2>Journal Entries</h2>
         <div class="journalcontainers" array key="entries" sortable="entries">
-             {{#for entry in entries}}
-                <div class="entry" object key:title="@search" default:title="new title??" >
-                    
-                <div class="title_text">
-                    <p class="title" target:title="@innerText" edit:title>{{default entry.title "Enter Title"}}</p>
-                </div>
-                
-                <div class = "infoArray" array key="infos" sortable = "infos">
-                    {{#for info in entry.infos}}
-                        <div class = "info" object key:info="@search">
-                            <div class = "date" object key:date="@search" edit:date>
-                                <p class = "date" target:date="@innerText">{{default info.date "Enter Date: (ex:mm/dd/yy)"}}</p>
-                            </div>
-                            <div class="entry_text" object key:text="@search" edit:text>
-                                <p class="text" target:text="@innerText">{{default info.text "Enter text here"}}</p>
-                            </div>
-                        </div>
-                      {{/for}}
-                </div>
+            {{#for entry in entries}}
+            <!--<a href="/{{currentUser.details.username}}/display/{{entry.id}}">-->
+            <div class="title_text" object key:title="@search" key:id={{entry.id}} key:date="@search"
+                key:text="@search">
+                <p class="title" target:title="@innerText" edit:title>{{default entry.title "Enter Title"}}</p>
+                <p class="date" target:date="@innerText" edit:date>{{default entry.date "Enter Date: (ex:mm/dd/yy)"}}
+                </p>
+                <p class="text" target:text="@innerText" edit:text>{{default entry.text "Enter text here"}}</p>
             </div>
+            <!--</a>-->
             {{/for}}
 
+
+        </div>
+
+
+        <!--
             <div id="popup-window">
-                <div class="entry" object key:title="@search" default:title="new title??" >
-                    
-                <div class="title_text">
-                    <p class="title" target:title="@innerText" edit:title>{{default entry.title "Enter Title"}}</p>
-                </div>
-                <button new:info>New info</button>
-                <div class = "infoArray" array key="infos" sortable = "infos">
-                    {{#for info in entry.infos}}
-                        <div class = "info" object key:info="@search">
-                            <div class = "date" object key:date="@search" edit:date>
-                                <p class = "date" target:date="@innerText">{{default info.date "Enter Date: (ex: mm/dd/yy)"}}</p>
+                <div class="entry" object key:title="@search" default:title="new title??">
+
+                    <div class="title_text">
+                        <p class="title" target:title="@innerText" edit:title>{{default entry.title "Enter Title"}}</p>
+                    </div>
+                    <button new:info>New info</button>
+                    <div class="infoArray" array key="infos" sortable="infos">
+                        {{#for info in entry.infos}}
+                        <div class="info" object key:info="@search">
+                            <div class="date" object key:date="@search" edit:date>
+                                <p class="date" target:date="@innerText">{{default info.date "Enter Date: (ex:
+                                    mm/dd/yy)"}}</p>
                             </div>
                             <div class="entry_text" object key:text="@search" edit:text>
                                 <p class="text" target:text="@innerText">{{default info.text "Enter Text Here"}}</p>
                             </div>
                         </div>
-                      {{/for}}
+                        {{/for}}
+                    </div>
                 </div>
-            </div>
                 <div class="dashdiv"><button id="close-button" onclick="window.location.reload()">Close</button></div>
             </div>
-        </div>
+            -->
+
         <div class="dashdiv">
-            <a href="#" id="popup-link"><button class="button button--add-entry" new:entry>Add Entry</button></a>
+            <button class="button--add-entry" new:entry>Add Entry</button>
         </div>
     </div>  
 </div>
-<h1>{{currentUser.details.username}} Calendar</h1>
-<div class="caldiv">
-     <div class = "calendar">
-        <div class = "calendarHead">
-            <p class = "currentMonth">Current Month</p>
-        </div>
-        <div class="calendarBody">
-        </div>
-    <script>
-
-        function getCurrentMonth() {
-            var currentDate = new Date();
-            var currentMonth = currentDate.toLocaleString("default", { month: "long" });
-            var currentYear = currentDate.getFullYear();
-            return currentMonth + " " + currentYear;
-            }
-
-        function getTotalDays(){
-            var currentDate = new Date();
-            var year = currentDate.getFullYear();
-            var month = currentDate.getMonth() + 1;
-            return new Date(year,month,0).getDate();
-        }
-
-        function generateCalendar() {
-            var currentDate = new Date();
-            var curMonth = document.querySelector(".currentMonth");
-            curMonth.textContent = getCurrentMonth();
-
-            var calendarBody = document.querySelector(".calendarBody");
-            
-            var totalDays = getTotalDays();
-
-            for (let day = 1; day <= totalDays; day++){
-                var cell=document.createElement("div");
-                cell.classList.add("dayCell");
-                cell.textContent = day;
-                cell.setAttribute("dateDate", `10/${day}/23`);
-
-                {{#for entry in entries}}
-                console.log("Entry date: {{entry.date}}");
-                console.log (`10/${day}/23`)
-                if (`10/${day}/23` === "{{entry.date}}") {
-                    console.log("work????");
-                    var entryDiv = document.createElement("div");
-                    entryDiv.classList.add("entries");
-
-                    var entryTitle = document.createElement("p");
-                    entryTitle.textContent = "{{entry.title}}";
-                    entryDiv.appendChild(entryTitle);
-
-                    var entryDate = document.createElement("p");
-                    entryDate.textContent = "{{entry.date}}";
-                    entryDiv.appendChild(entryDate);
-
-                    var entryText = document.createElement("p");
-                    entryText.textContent = "{{entry.entryText}}";
-                    entryDiv.appendChild(entryText);
-
-                    cell.appendChild(entryDiv);
-                }
-                {{/for}}
-                calendarBody.appendChild(cell);               
-            }
-            }
-
-        generateCalendar();
-    </script>
-
-</div>
+<br>
 
 

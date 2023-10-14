@@ -1,5 +1,7 @@
 {
   "username": "test2",
   "hash": "$2a$14$8GJFvpyuil0Cgz6Mh/2Y.uNOBrwezpKxQF9pwHTeWPQWbuIeF2ETG",
-  "email": "test@test.com"
+  "email": "test@test.com",
+  "resetPasswordToken": "072f697d94643927c1d3d6d05b7df50cac29a3f099fe865e213ace9cbbd39308",
+  "resetPasswordExpires": 1697258384909
 }
