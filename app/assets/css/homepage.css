@@ -34,15 +34,16 @@
   margin-left: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  width: 140px;
+  width: 200px;
   height: 40px;
   line-height: 46px;
   background-color: #E9EDC9;
   border-radius: 5px;
   text-align: center;
-  font-family: Apple Chancery;
+  font-family: cursive;
   border-color: rgb(219, 194, 160);
   font-size: 15px;
+  font-weight: bold;
 }
 
 .mainbutton:hover {

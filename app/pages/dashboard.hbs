@@ -1,0 +1,103 @@
+<h1>{{currentUser.details.username}} Dashboard</h1>
+<!--Flexbox div to contain layout-->
+<div class="container">
+    <!--THis div is for left side of app-->
+    <div>
+
+        <div class="leftdiv">
+            <div object>
+                <h2>Goals</h2>
+                <div class="leftcheckbox">
+                    <ul array key="goals" sortable>
+                        {{#for goal in goals}}
+                        <li object key:text="@innerText" edit:text>{{default goal.text "New Goal"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:goal>Add Goal</button></div>
+            </div>
+        </div>
+
+        <div class="leftdiv">
+            <div object>
+                <h2>Habbits</h2>
+                <div class="leftcheckbox">
+                    <ul array key="Habbits" sortable>
+                        {{#for habbit in Habbits}}
+                        <li object key:text="@innerText" edit:text>{{default habbit.text "New Habit"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:habbit>Add Habbit</button></div>
+            </div>
+        </div>
+
+        <div class="leftdiv">
+            <div object>
+                <h2>Reminders</h2>
+                <div class="leftcheckbox">
+                    <ul array key="Reminders" sortable>
+                        {{#for remind in Reminders}}
+                        <li object key:text="@innerText" edit:text>{{default remind.text "New Reminder"}}</li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="dashdiv"><button class="dashbutton" new:remind>Add Reminder</button></div>
+            </div>
+        </div>
+    </div>
+    <!--This div is for the journal entires-->
+    <div class="journaldiv">
+        <h2>Journal Entries</h2>
+        <div class="journalcontainers" array key="entries" sortable="entries">
+            {{#for entry in entries}}
+
+            <a href="display/{{entry.id}}">
+                <div class="title_text" object key:title="@search" key:id={{entry.id}} key:date="@search"
+                    key:text="@search">
+                    <p class="title" target:title="@innerText" edit:title>{{default entry.title "Enter Title"}}</p>
+                    <p class="date" target:date="@innerText" edit:date>{{default entry.date "Enter Date:
+                        (ex:mm/dd/yy)"}}
+                    </p>
+                    <p class="text" target:text="@innerText" edit:text>{{default entry.text "Enter text here"}}</p>
+                </div>
+            </a>
+
+            {{/for}}
+
+
+        </div>
+
+
+        <!--
+            <div id="popup-window">
+                <div class="entry" object key:title="@search" default:title="new title??">
+
+                    <div class="title_text">
+                        <p class="title" target:title="@innerText" edit:title>{{default entry.title "Enter Title"}}</p>
+                    </div>
+                    <button new:info>New info</button>
+                    <div class="infoArray" array key="infos" sortable="infos">
+                        {{#for info in entry.infos}}
+                        <div class="info" object key:info="@search">
+                            <div class="date" object key:date="@search" edit:date>
+                                <p class="date" target:date="@innerText">{{default info.date "Enter Date: (ex:
+                                    mm/dd/yy)"}}</p>
+                            </div>
+                            <div class="entry_text" object key:text="@search" edit:text>
+                                <p class="text" target:text="@innerText">{{default info.text "Enter Text Here"}}</p>
+                            </div>
+                        </div>
+                        {{/for}}
+                    </div>
+                </div>
+                <div class="dashdiv"><button id="close-button" onclick="window.location.reload()">Close</button></div>
+            </div>
+            -->
+
+        <div class="dashdiv">
+            <button class="button--add-entry" new:entry>Add Entry</button>
+        </div>
+    </div>
+</div>
+<br>

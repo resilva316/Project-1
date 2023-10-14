@@ -1,5 +1,14 @@
 <div class="journal_page">
-    <div class="journal_title">
-        <p>{{currentItem.title}}</p>
+    <div class="journal_text" object key:title="@search" key:id={{currentItem.id}} key:date="@search"
+        key:text="@search">
+        <div class="journal_title">
+            <p target:title="@innerText" edit:title>{{currentItem.title}}</p>
+        </div>
+        <div class="journal_date">
+            <p target:date="@innerText" edit:date>{{currentItem.date}}</p>
+        </div>
+        <div class="journal_text">
+            <p target:text="@innerText" edit:text>{{currentItem.text}}</p>
+        </div>
     </div>
 </div>
